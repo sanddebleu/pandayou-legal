@@ -55,8 +55,14 @@ data collection to the minimum needed to run the features you use.</p>
   <li><strong>Push token</strong>: a Firebase Cloud Messaging token per
       device, so reminders and friend nudges can reach you.</li>
   <li><strong>Microphone</strong>: only while you are actively recording a
-      voice diary memo or using voice input. Audio is transcribed for that
-      entry; we do not record or listen in the background.</li>
+      voice diary memo, using voice input in Plan my day, or dictating a vent
+      message. Audio is transcribed for that session; we do not record or listen
+      in the background.</li>
+  <li><strong>AI features</strong> (Vent to panda, Plan my day, smart reminders,
+      stuck-habit coach): when you use these while signed in, the text you send
+      is transmitted to our servers and processed by <strong>Google Gemini</strong>
+      to generate a reply. We use this only to run the feature — not for ads or
+      profiling. Vent chats are not reviewed by humans unless you contact support.</li>
 </ul>
 <p>We do <strong>not</strong> sell your data, show third-party ads, or use
 advertising trackers. We do not collect your location, contacts, SMS, or
@@ -64,8 +70,15 @@ call logs.</p>
 
 <h2>How it is used and shared</h2>
 <p>Your content is stored on our backend provider (Supabase) and push is
-delivered via Google Firebase Cloud Messaging. These providers process
-data only to deliver the app's features. Data is encrypted in transit.</p>
+delivered via Google Firebase Cloud Messaging. AI requests are processed via
+our servers and Google Gemini. These providers process data only to deliver
+the app's features. Data is encrypted in transit.</p>
+
+<h2>Wellness &amp; AI disclaimer</h2>
+<p>Vent to panda and related AI tools provide automated wellness support only.
+They are <strong>not</strong> therapy, medical advice, diagnosis, treatment, or
+an emergency service. AI replies may be inaccurate. If you are in crisis,
+contact local emergency services or a crisis line (e.g. 988 in the US).</p>
 
 <h2>How long we keep it</h2>
 <p>As long as your account is active. If you stop using the app, your data
