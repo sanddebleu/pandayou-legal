@@ -29,11 +29,16 @@
 </head>
 <body>
 <h1>PandaYou — Privacy Policy</h1>
-<p class="meta">Last updated: 26 June 2026</p>
+<p class="meta">Last updated: 27 June 2026</p>
 
 <p>PandaYou is a personal habit, diary, gratitude and focus app. This
-policy explains what we collect, why, and how you can delete it. We keep
-data collection to the minimum needed to run the features you use.</p>
+policy explains what we collect, why, and how you can delete it.</p>
+
+<h2>Sign-in required</h2>
+<p>PandaYou requires <strong>Google sign-in</strong> to use the app. Your
+habits, diary, mood log, and other content are stored in an encrypted cloud
+backup tied to your account. We do not offer a separate anonymous or
+offline-only mode in the public app.</p>
 
 <h2>Vent to panda &amp; AI features</h2>
 <p>PandaYou uses cloud AI (<strong>Google Gemini</strong>, via our servers) to
@@ -41,51 +46,56 @@ generate short text when you use features such as Vent to panda, Plan my day,
 smart voice reminders, the stuck-habit coach, morning check-in follow-ups,
 mood and morning quotes, journal mood reads, evening reflection summaries,
 journal photo scan (handwriting → text), and Letters from You drafts.</p>
-<p>When you use these while signed in, the text or image you send is
-transmitted to our servers and processed only to produce a response for you.
-We do not use this content for advertising or sell it. AI replies are wellness
-support only — not therapy, medical advice, or emergency services. If you are
-in crisis, contact local emergency services (e.g. 988 in the US).</p>
-<p>Voice input is converted to text on your device; we do not store raw vent
-audio. Weekly usage caps apply to most AI features.</p>
+<p>When you use these features, the text or image you send is transmitted to
+our servers and processed only to produce a response for you. We do not use this
+content for advertising or sell it. AI replies are wellness support only — not
+therapy, medical advice, or emergency services. If you are in crisis, contact
+local emergency services (e.g. 988 in the US).</p>
+<p>If an AI reply concerns you, report it via <strong>Settings → Send
+feedback</strong>. Voice input is converted to text on your device; we do not
+store raw vent audio. Weekly usage caps apply to most AI features.</p>
 
 <h2>Friends, nudges &amp; co-habits</h2>
 <p>If you pair with a friend, we store a link between accounts and a progress
 snapshot you choose to publish (display name and habit stats — not diary text).
-Paired friends can send live push nudges; notification title and short message
-travel via Firebase Cloud Messaging. We keep only a daily send count per pair
-for rate limiting — not copies of nudge messages.</p>
-<p>Co-habit pacts live in your encrypted backup. You can remove friends or stop
-sharing anytime.</p>
+Paired friends can send live push nudges via Firebase Cloud Messaging. We keep
+only a daily send count per pair for rate limiting — not copies of nudge
+messages.</p>
 
 <h2>What we collect</h2>
 <ul>
-  <li><strong>Account</strong>: email and Google display name (Google sign-in only).</li>
+  <li><strong>Account</strong> (required): Google email and display name.</li>
   <li><strong>Your content</strong>: habits, diary, gratitude, moods, letters,
-      memory jar, photos you attach, and XP — in an encrypted cloud backup when
-      signed in, or only on-device if you never sign in.</li>
-  <li><strong>Push token</strong>: Firebase Cloud Messaging token per device for
-      friend nudges, co-habit reminders, and optional come-back pings.</li>
+      memory jar, photos you attach, and XP — in an encrypted cloud backup.</li>
+  <li><strong>Push token</strong>: Firebase Cloud Messaging token per device.</li>
   <li><strong>Friend data</strong>: pairing links, snapshots you publish, and
       nudge rate-limit counters.</li>
   <li><strong>Microphone</strong>: only while you actively record a voice memo,
-      dictate in Plan my day, or dictate a vent message. Not recorded in the
-      background.</li>
+      dictate in Plan my day, or dictate a vent message.</li>
+  <li><strong>Journal scan photos</strong>: sent to our servers for AI
+      transcription; not kept as separate files after processing.</li>
   <li><strong>Diagnostics</strong>: crash logs stored <em>locally on your device
       only</em> (not uploaded automatically).</li>
 </ul>
 <p>We do <strong>not</strong> sell your data, show third-party ads, or collect
 location, contacts, SMS, or call logs.</p>
 
-<h2>How it is used and shared</h2>
-<p>Your content is stored on <strong>Supabase</strong>. Push is delivered via
-<strong>Firebase Cloud Messaging (Google)</strong>. AI requests are processed
-via our servers and <strong>Google Gemini</strong>. These providers process data
-only to deliver app features. Data is encrypted in transit.</p>
+<h2>Who we share it with</h2>
+<p>We use service providers to run PandaYou. They process data only on our
+instructions — not for their own advertising or resale.</p>
+<ul>
+  <li><strong>Supabase</strong> — account, encrypted backup, private media
+      storage, friend links, push tokens.</li>
+  <li><strong>Firebase Cloud Messaging (Google)</strong> — push delivery
+      (device token + notification title/body).</li>
+  <li><strong>Google Gemini</strong> — AI text and journal scan images, solely
+      to generate replies.</li>
+</ul>
+<p>Data is encrypted in transit. We do not sell data or share it with
+advertisers or data brokers.</p>
 
 <h2>How long we keep it</h2>
-<p>As long as your account is active, until you delete it. Local-only data is
-removed when you uninstall the app.</p>
+<p>As long as your account is active, until you delete it.</p>
 
 <h2>Deleting your account and data</h2>
 <ul>
@@ -95,7 +105,7 @@ removed when you uninstall the app.</p>
       <a href="https://sanddebleu.github.io/pandayou-legal/delete-account.html">delete-account page</a>
       or email
       <a href="mailto:PandaYou.app@gmail.com">PandaYou.app@gmail.com</a> from
-      your account email.</li>
+      your Google account email.</li>
 </ul>
 
 <h2>Your rights</h2>
