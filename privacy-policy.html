@@ -6,18 +6,10 @@
   without installing the app), entered in Play Console → Store listing,
   App content, and Data safety.
 
-  How to publish (pick one, all free):
-   • GitHub Pages: push web_legal/ to a repo, enable Pages, the URL becomes
-     https://<user>.github.io/<repo>/privacy-policy.html
-   • Netlify / Cloudflare Pages: drag-drop the web_legal/ folder.
-   • Any static host you control.
-
-  BEFORE publishing, replace every {{PLACEHOLDER}} below:
-   • PandaYou.app@gmail.com  — your real support/contact email.
-   • https://sanddebleu.github.io/pandayou-legal/delete-account.html     — the public URL of delete-account.html once hosted.
-   • 18 May 2026 — e.g. 18 May 2026.
-  Then put the final URL of THIS page into Play Console, and update the URL
-  in lib/features/settings/info_pages.dart so the in-app text matches.
+  Host web_legal/ on GitHub Pages (sanddebleu.github.io/pandayou-legal/).
+  Pushes to main that touch web_legal/ auto-deploy via
+  .github/workflows/deploy-legal.yml (needs LEGAL_PAGES_TOKEN secret).
+  Keep in sync with lib/features/settings/info_pages.dart.
 -->
 <html lang="en">
 <head>
@@ -37,79 +29,88 @@
 </head>
 <body>
 <h1>PandaYou — Privacy Policy</h1>
-<p class="meta">Effective: 18 May 2026</p>
+<p class="meta">Last updated: 26 June 2026</p>
 
 <p>PandaYou is a personal habit, diary, gratitude and focus app. This
 policy explains what we collect, why, and how you can delete it. We keep
 data collection to the minimum needed to run the features you use.</p>
 
+<h2>Vent to panda &amp; AI features</h2>
+<p>PandaYou uses cloud AI (<strong>Google Gemini</strong>, via our servers) to
+generate short text when you use features such as Vent to panda, Plan my day,
+smart voice reminders, the stuck-habit coach, morning check-in follow-ups,
+mood and morning quotes, journal mood reads, evening reflection summaries,
+journal photo scan (handwriting → text), and Letters from You drafts.</p>
+<p>When you use these while signed in, the text or image you send is
+transmitted to our servers and processed only to produce a response for you.
+We do not use this content for advertising or sell it. AI replies are wellness
+support only — not therapy, medical advice, or emergency services. If you are
+in crisis, contact local emergency services (e.g. 988 in the US).</p>
+<p>Voice input is converted to text on your device; we do not store raw vent
+audio. Weekly usage caps apply to most AI features.</p>
+
+<h2>Friends, nudges &amp; co-habits</h2>
+<p>If you pair with a friend, we store a link between accounts and a progress
+snapshot you choose to publish (display name and habit stats — not diary text).
+Paired friends can send live push nudges; notification title and short message
+travel via Firebase Cloud Messaging. We keep only a daily send count per pair
+for rate limiting — not copies of nudge messages.</p>
+<p>Co-habit pacts live in your encrypted backup. You can remove friends or stop
+sharing anytime.</p>
+
 <h2>What we collect</h2>
 <ul>
-  <li><strong>Account</strong>: your email address (and, if you sign in
-      with Google, your Google display name) — used only to authenticate
-      you and sync your data across devices.</li>
-  <li><strong>Your content</strong>: habit names, reminder times, diary
-      and gratitude entries, mood entries, and any photos you attach.
-      Stored so we can back them up and restore them when you reinstall
-      or switch devices.</li>
-  <li><strong>Push token</strong>: a Firebase Cloud Messaging token per
-      device, so reminders and friend nudges can reach you.</li>
-  <li><strong>Microphone</strong>: only while you are actively recording a
-      voice diary memo, using voice input in Plan my day, or dictating a vent
-      message. Audio is transcribed for that session; we do not record or listen
-      in the background.</li>
-  <li><strong>AI features</strong> (Vent to panda, Plan my day, smart reminders,
-      stuck-habit coach): when you use these while signed in, the text you send
-      is transmitted to our servers and processed by <strong>cloud AI services</strong>
-      to generate a reply. We use this only to run the feature — not for ads or
-      profiling. Vent chats are not reviewed by humans unless you contact support.</li>
+  <li><strong>Account</strong>: email and Google display name (Google sign-in only).</li>
+  <li><strong>Your content</strong>: habits, diary, gratitude, moods, letters,
+      memory jar, photos you attach, and XP — in an encrypted cloud backup when
+      signed in, or only on-device if you never sign in.</li>
+  <li><strong>Push token</strong>: Firebase Cloud Messaging token per device for
+      friend nudges, co-habit reminders, and optional come-back pings.</li>
+  <li><strong>Friend data</strong>: pairing links, snapshots you publish, and
+      nudge rate-limit counters.</li>
+  <li><strong>Microphone</strong>: only while you actively record a voice memo,
+      dictate in Plan my day, or dictate a vent message. Not recorded in the
+      background.</li>
+  <li><strong>Diagnostics</strong>: crash logs stored <em>locally on your device
+      only</em> (not uploaded automatically).</li>
 </ul>
-<p>We do <strong>not</strong> sell your data, show third-party ads, or use
-advertising trackers. We do not collect your location, contacts, SMS, or
-call logs.</p>
+<p>We do <strong>not</strong> sell your data, show third-party ads, or collect
+location, contacts, SMS, or call logs.</p>
 
 <h2>How it is used and shared</h2>
-<p>Your content is stored on our backend provider (Supabase) and push is
-delivered via Google Firebase Cloud Messaging. AI requests are processed via
-our servers and cloud AI providers. These providers process data only to deliver
-the app's features. Data is encrypted in transit.</p>
-
-<h2>Wellness &amp; AI disclaimer</h2>
-<p>Vent to panda and related AI tools provide automated wellness support only.
-They are <strong>not</strong> therapy, medical advice, diagnosis, treatment, or
-an emergency service. AI replies may be inaccurate. If you are in crisis,
-contact local emergency services or a crisis line (e.g. 988 in the US).</p>
+<p>Your content is stored on <strong>Supabase</strong>. Push is delivered via
+<strong>Firebase Cloud Messaging (Google)</strong>. AI requests are processed
+via our servers and <strong>Google Gemini</strong>. These providers process data
+only to deliver app features. Data is encrypted in transit.</p>
 
 <h2>How long we keep it</h2>
-<p>As long as your account is active. If you stop using the app, your data
-remains so it can be restored if you return — until you delete it.</p>
+<p>As long as your account is active, until you delete it. Local-only data is
+removed when you uninstall the app.</p>
 
 <h2>Deleting your account and data</h2>
-<p>You can permanently delete your account and all cloud data at any time:</p>
 <ul>
   <li><strong>In the app</strong>: Settings → Login &amp; profile →
-      <em>Delete account</em>. This immediately and irreversibly removes
-      your account, backups, reminders, and friend connections.</li>
-  <li><strong>Without the app</strong>: visit
-      <a href="https://sanddebleu.github.io/pandayou-legal/delete-account.html">https://sanddebleu.github.io/pandayou-legal/delete-account.html</a> and follow the steps, or
-      email <a href="mailto:PandaYou.app@gmail.com">PandaYou.app@gmail.com</a> from
-      your account email. We delete everything within 30 days (usually
-      immediately).</li>
+      <em>Delete account</em> (immediate, irreversible).</li>
+  <li><strong>Without the app</strong>:
+      <a href="https://sanddebleu.github.io/pandayou-legal/delete-account.html">delete-account page</a>
+      or email
+      <a href="mailto:PandaYou.app@gmail.com">PandaYou.app@gmail.com</a> from
+      your account email.</li>
 </ul>
-<p>Habit or diary data kept only on your device (if you never signed in)
-is removed when you uninstall the app.</p>
 
 <h2>Your rights</h2>
-<p>You can access, export, correct, or delete your data. Contact
-<a href="mailto:PandaYou.app@gmail.com">PandaYou.app@gmail.com</a> for any request.</p>
+<p>Export data in-app (Settings → Backup → Export). Request access, correction,
+or deletion via
+<a href="mailto:PandaYou.app@gmail.com">PandaYou.app@gmail.com</a>. EU/UK users
+have GDPR rights; we respond within 30 days.</p>
 
 <h2>Children</h2>
-<p>PandaYou is not directed to children. We do not knowingly collect data
-from children under the age required by local law.</p>
+<p>PandaYou is intended for users aged <strong>13 and over</strong>. We do not
+knowingly collect data from anyone younger.</p>
 
 <h2>Changes</h2>
-<p>If this policy changes materially, we will update this page and the
-effective date above.</p>
+<p>Material changes will be reflected on this page and in the in-app policy with
+an updated date.</p>
 
 <h2>Contact</h2>
 <p><a href="mailto:PandaYou.app@gmail.com">PandaYou.app@gmail.com</a></p>
