@@ -29,16 +29,19 @@
 </head>
 <body>
 <h1>PandaYou — Privacy Policy</h1>
-<p class="meta">Last updated: 27 June 2026</p>
+<p class="meta">Last updated: 7 July 2026</p>
 
 <p>PandaYou is a personal habit, diary, gratitude and focus app. This
 policy explains what we collect, why, and how you can delete it.</p>
 
 <h2>Sign-in required</h2>
-<p>PandaYou requires <strong>Google sign-in</strong> to use the app. Your
-habits, diary, mood log, and other content are stored in an encrypted cloud
-backup tied to your account. We do not offer a separate anonymous or
-offline-only mode in the public app.</p>
+<p>PandaYou requires sign-in to use the app — with <strong>Google</strong> or
+<strong>email and password</strong>. Your habits, diary, mood log, and other
+content are stored <strong>on your device</strong> while you use the app. We do
+not offer a separate anonymous or offline-only mode in the public app.</p>
+<p>Optional <strong>Panda+</strong> subscription (via Google Play) adds
+automatic encrypted cloud backup and restore across reinstalls and devices.
+Free users can export their data manually from Settings → Data.</p>
 
 <h2>Vent to panda &amp; AI features</h2>
 <p>PandaYou uses cloud AI (<strong>Google Gemini</strong>, via our servers) to
@@ -48,26 +51,37 @@ mood and morning quotes, journal mood reads, evening reflection summaries,
 journal photo scan (handwriting → text), and Letters from You drafts.</p>
 <p>When you use these features, the text or image you send is transmitted to
 our servers and processed only to produce a response for you. We do not use this
-content for advertising or sell it. AI replies are wellness support only — not
-therapy, medical advice, or emergency services. If you are in crisis, contact
-local emergency services (e.g. 988 in the US).</p>
+content for advertising or sell it. AI replies can be wrong or incomplete —
+wellness support only, not therapy, medical advice, diagnosis, or emergency
+care. If you are in crisis, use Crisis help inside vent or contact local
+emergency services (e.g. 988 in the US).</p>
 <p>If an AI reply concerns you, report it via <strong>Settings → Send
-feedback</strong>. Voice input is converted to text on your device; we do not
-store raw vent audio. Weekly usage caps apply to most AI features.</p>
+feedback</strong>. Voice input in vent or Plan my day is converted to text on
+your device (or via the system speech service); we do not store raw vent audio.</p>
+<p>New accounts get a one-time <strong>7-day AI trial</strong> with weekly
+usage caps. After the trial, AI features require an optional
+<strong>Panda+</strong> subscription. See Settings → Panda AI usage for current
+limits.</p>
 
 <h2>Friends, nudges &amp; co-habits</h2>
-<p>If you pair with a friend, we store a link between accounts and a progress
-snapshot you choose to publish (display name and habit stats — not diary text).
-Paired friends can send live push nudges via Firebase Cloud Messaging. We keep
-only a daily send count per pair for rate limiting — not copies of nudge
-messages.</p>
+<p>If you pair with a friend (Panda ID or invite link), we store a link between
+accounts and a progress snapshot you choose to publish (display name and habit
+stats — not diary text). Paired friends can send live push nudges via Firebase
+Cloud Messaging. We keep only a daily send count per pair for rate limiting —
+not copies of nudge messages on our servers.</p>
+<p>Co-habit pacts let two people track the same habit goal together. You can
+remove a friend or stop sharing at any time from the Friends screen.</p>
 
 <h2>What we collect</h2>
 <ul>
-  <li><strong>Account</strong> (required): Google email and display name.</li>
+  <li><strong>Account</strong> (required): email address and, for Google
+      sign-in, your Google display name. Passwords are handled by Supabase Auth
+      — we never store or see your password in plain text.</li>
   <li><strong>Your content</strong>: habits, diary, gratitude, moods, letters,
-      memory jar, photos you attach, and XP — in an encrypted cloud backup.</li>
-  <li><strong>Push token</strong>: Firebase Cloud Messaging token per device.</li>
+      memory jar, photos you attach, and XP — on your device; with Panda+, also
+      in an encrypted cloud backup tied to your account.</li>
+  <li><strong>Push token</strong>: Firebase Cloud Messaging token per device
+      (for friend nudges and optional come-back pings if you opt in).</li>
   <li><strong>Friend data</strong>: pairing links, snapshots you publish, and
       nudge rate-limit counters.</li>
   <li><strong>Microphone</strong>: only while you actively record a voice memo,
@@ -84,18 +98,25 @@ location, contacts, SMS, or call logs.</p>
 <p>We use service providers to run PandaYou. They process data only on our
 instructions — not for their own advertising or resale.</p>
 <ul>
-  <li><strong>Supabase</strong> — account, encrypted backup, private media
-      storage, friend links, push tokens.</li>
+  <li><strong>Supabase</strong> — account (Google or email sign-in), optional
+      Panda+ encrypted backup, private media storage, friend links, push
+      tokens.</li>
   <li><strong>Firebase Cloud Messaging (Google)</strong> — push delivery
       (device token + notification title/body).</li>
   <li><strong>Google Gemini</strong> — AI text and journal scan images, solely
       to generate replies.</li>
+  <li><strong>Google Play</strong> — processes Panda+ subscription payments;
+      we receive purchase status, not your card details.</li>
 </ul>
+<p>When you tap Share or Invite, PandaYou hands content to your phone’s system
+share sheet — you choose who receives it. We never auto-post or upload it.</p>
 <p>Data is encrypted in transit. We do not sell data or share it with
 advertisers or data brokers.</p>
 
 <h2>How long we keep it</h2>
-<p>As long as your account is active, until you delete it.</p>
+<p>As long as your account is active, until you delete it. If you sign out and
+don’t return, your account and any Panda+ cloud data remain until you delete
+the account or your Panda+ backup lapses per our retention rules above.</p>
 
 <h2>Deleting your account and data</h2>
 <ul>
@@ -105,12 +126,13 @@ advertisers or data brokers.</p>
       <a href="https://sanddebleu.github.io/pandayou-legal/delete-account.html">delete-account page</a>
       or email
       <a href="mailto:PandaYou.app@gmail.com">PandaYou.app@gmail.com</a> from
-      your Google account email.</li>
+      the <strong>email address of the account you used to sign in</strong>.</li>
 </ul>
 
 <h2>Your rights</h2>
-<p>Export data in-app (Settings → Backup → Export). Request access, correction,
-or deletion via
+<p>Export data in-app (Settings → Data → Backup habits or Full device backup).
+If you have Panda+ cloud backup, you can also export from Settings → Data →
+Cloud backup. Request access, correction, or deletion via
 <a href="mailto:PandaYou.app@gmail.com">PandaYou.app@gmail.com</a>. EU/UK users
 have GDPR rights; we respond within 30 days.</p>
 
